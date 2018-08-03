@@ -1,0 +1,7 @@
+by,location,备注
+By.ID,operId,用户名输入框
+By.ID,operPwd,密码输入框
+By.CLASS_NAME,submit,登录按钮
+By.XPATH,//form/div[@class='DmpFine-login-box-body']/div[3],错误提示文本
+By.XPATH,//div/div[@class='userInfo']/span,正确显示用户信息
+,,
