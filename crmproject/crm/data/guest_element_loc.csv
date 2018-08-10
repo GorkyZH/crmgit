@@ -1,0 +1,13 @@
+by,location,备注
+By.ID,myFrame,“获取iframe”窗口
+By.XPATH,//div[@class='body']/div/div/div[2]/span,“客户管理”菜单
+By.XPATH,//div[@class='left-menu-mainSon'][1]/div[1]/span,“客户列表”菜单
+By.XPATH,//form[@id='customer_form']/div/div[1]/div[1],“客户数据中心>客户管理>客户列表”标题
+By.NAME,customer.clientName,“客户姓名”输入框
+By.NAME,customer.clientNumber,“客户号码”输入框
+By.ID,beginDate,“登记开始时间”输入框
+By.ID,endDate,“登记结束时间”输入框
+By.ID,DmpFine_select1,“数据来源”选择框
+By.XPATH,//button[@type='submit'],“查询”按钮
+By.XPATH,//button[@type='reset'],“重置”按钮
+By.XPATH,//div[@id='customerListPage']/table/tbody/tr[1]/td[1],

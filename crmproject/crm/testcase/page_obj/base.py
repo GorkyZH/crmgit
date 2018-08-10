@@ -2,6 +2,9 @@
 # _*_ coding: utf-8 _*_
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
+import selenium.webdriver.support.ui as ui
+from selenium.webdriver.common.by import By
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -23,14 +26,14 @@ class Page(object):
     def _open(self, url):
         url = self.base_url + url
         self.driver.get(url)
-        print("----------------:", url)
+        print "----------------:", url
         assert self.on_page(), 'Did not land on %s' % url
 
     def find_element(self, *loc):
         try:
             WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(loc))
             return self.driver.find_element(*loc)
-        except:
+        except NoSuchElementException:
             print "%s 页面中未能找到 %s 元素" % (self, loc)
 
     def find_elements(self, *loc):
@@ -48,13 +51,16 @@ class Page(object):
         return self.driver.execute_script(src)
 
     def switch_frame(self, loc):
-        return self.driver.switch_to_frame(loc)
+        return self.driver.switch_to.frame(loc)
 
     def click_text(self, loc):
         self.find_element(*loc).click()
 
+    def get_text(self, loc):
+        return self.find_element(*loc).text
+
     # 重写定义send_keys方法
-    def send_keys(self, loc, vaule, clear_first=True, click_first=True):
+    def send_keys(self, loc, vaule="", clear_first=True, click_first=True):
         try:
             loc = getattr(self, "_%s" % loc)  # getattr相当于实现self.loc
             if click_first:
@@ -64,3 +70,19 @@ class Page(object):
                 self.find_element(*loc).send_keys(vaule)
         except AttributeError:
             print "%s 页面中未能找到 %s 元素" % (self, loc)
+
+    # 一直等待某元素可见，默认超时10秒
+    def is_visible(self, locator, timeout=10):
+        try:
+            ui.WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located((By.XPATH, locator)))
+            return True
+        except TimeoutException:
+            return False
+
+    # 一直等待某个元素消失，默认超时10秒
+    def is_not_visible(self, locator, timeout=10):
+        try:
+            ui.WebDriverWait(self.driver, timeout).until_not(EC.visibility_of_element_located((By.XPATH, locator)))
+            return True
+        except TimeoutException:
+            return False

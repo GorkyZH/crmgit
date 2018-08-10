@@ -8,6 +8,9 @@
 CSV_USER_PATH = 'F:\crmproject\crm\data\userinfo.csv'
 CSV_LOGIN_BY_PATH = 'F:\crmproject\crm\data\login_element_loc.csv'
 CSV_HOME_BY_PATH = 'F:\crmproject\crm\data\home_element_loc.csv'
+CSV_GUEST_BY_PATH = 'F:\crmproject\crm\data\guest_element_loc.csv'
+CSV_GUEST_SEARCH_KEYWORD_PATH = 'F:\crmproject\crm\data\guest_search_keyword.csv'
+
 
 # 菜单名称
 MENU_SJKB_NAME = "数据看板"
@@ -42,6 +45,7 @@ HOME_PUSH_LX_TITLE = "推送类型"
 
 # 客户列表页面
 GUEST_PAGE_TITLE = "客户列表"
+GUEST_LIST_PAGE_TITLE = "客户数据中心> 客户管理> 客户列表"
 
 # 客群管理页面
 CUSTOMER_PAGE_TITLE = "客群管理"

@@ -14,7 +14,7 @@ By.XPATH,//div[@id='float-data']/div[1]/div[2]/div[2],“客户总数”标题文本
 By.ID,count-number2,“客群总数”数量文本
 By.XPATH,//div[@id='float-data']/div[2]/div[2]/div[2],“客群总数”标题文本
 By.ID,count-number3,“推送总数”数量文本
-By.XPATH,//div[@id='float-data']/div[3]/div[2]/div[1],“推送总数”标题文本
+By.XPATH,//div[@id='float-data']/div[3]/div[2]/div[2],“推送总数”标题文本
 By.XPATH,//div[@class='DmpFine-mainBox']/div/div[2]/div[1]/div/div,“客户分析”标题文本
 By.XPATH,//div[@class='DmpFine-mainBox']/div/div[2]/div[2]/span,“客户构成”标题文本
 By.XPATH,//div[@id='eacharttab1']/div[2],“数据来源”标题文本

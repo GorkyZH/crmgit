@@ -19,6 +19,7 @@ class LoginTest(myunit.MyTest):
     def user_login_verify(self, username=read_user_data(0, "username"),
                           password=read_user_data(0, "password")):
         Login(self.driver).user_login(username, password)
+        print "用户名：", read_user_data(0, "username")
 
     def test_001_login_user_pwd_empty(self):
         """账号密码均为空"""
