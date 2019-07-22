@@ -21,13 +21,13 @@ def send_mail(file_new):
     msg = MIMEText(mail_body, 'html', 'utf-8')
     # msg = MIMEText('请查看附件内容！', 'plain', 'utf-8')
     msg['Subject'] = Header("自动化测试报告", 'utf-8')
-    msg['From'] = 'Gorky<gorky1112@163.com>'
-    msg['To'] = '1018063128@qq.com'
+    msg['From'] = '***<*****@163.com>'
+    msg['To'] = '*******@qq.com'
 
     smtp = smtplib.SMTP()
     smtp.connect("smtp.163.com")
-    smtp.login("gorky1112@163.com", "gorky@1112")
-    smtp.sendmail('gorky1112@163.com', '1018063128@qq.com', msg.as_string())
+    smtp.login("******@163.com", "*********")
+    smtp.sendmail('*******@163.com', '********8@qq.com', msg.as_string())
     smtp.quit()
     print("the email has send out!")
 
